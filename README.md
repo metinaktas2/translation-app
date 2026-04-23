@@ -10,7 +10,8 @@ A modern and fully responsive translation application that allows users to trans
 - ⚡ Fast and seamless translation experience
 - 📱 Fully responsive design
 - 🎯 Clean and user-friendly UI
-- 🛠️ Tech Stack
+  
+# 🛠️ Tech Stack
 - React
 - Redux Toolkit
 - React Redux
