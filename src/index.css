@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .textarea {
+    @apply w-full min-h-[200px] lg:min-h-[300px] text-zinc-900 lg:text-lg rounded-xl p-4 bg-zinc-100 border-2 border-zinc-200 focus:border-blue-500 focus:outline-none resize-none disabled:opacity-100 disabled:bg-zinc-700/50 disabled:border-zinc-600 disabled:placeholder:text-zinc-200;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-zinc-900;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  }
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(63, 63, 70, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(82, 82, 91, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #6a42c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Loader */
+/* From Uiverse.io by aryamitra06 */
+.loader {
+  display: flex;
+  align-items: center;
+  scale: 0.8;
+}
+
+.bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  animation-delay: 0.25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #ffff;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
+}
